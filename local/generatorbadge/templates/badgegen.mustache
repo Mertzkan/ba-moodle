@@ -1,0 +1,190 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_badgegenerator/badgegenerator
+
+}}
+
+<div class="containerBadge">
+    <!--    <header class="headerBadge">-->
+    <!--        <p class="headlineBadge" id="headlinebad"> FutureSkills - Badge Konfigurator</p>-->
+    <!--    </header>-->
+
+    <div class="navigationBadge">
+        <button class="parameterBadge courseTitle" ><a class="aBadge" href="#" id="courseTitleLink">Kurstitel</a>
+        </button>
+        <button class="parameterBadge courseProgramm" ><a class="aBadge" href="#" id="courseProgrammLink">KursProgramm</a>
+        </button>
+        <button class="parameterBadge badgeColor" ><a class="aBadge" href="#" id="badgeColorLink">Badge Farbe</a>
+        </button>
+        <button class="parameterBadge badgenumber" ><a class="aBadge" href="#"
+                                                           id="badgenumberLink">Kursfortschritt</a>
+        </button>
+        <button class="parameterBadge badgeIcon" ><a class="aBadge" href="#" id="badgeIconLink">Badge Icon</a>
+        </button>
+        <!-- Anlegen des Download-Buttons -->
+        <button class="downloadBtn">Download</button>
+        <div class="badgeImageSwitch">
+            <p class="badgeImageSize256">220x220px</p>
+            <label class="switchBadge">
+                <!-- Nicht vergessen -->
+                <input type="checkbox" class="inputBadge badgeSize">
+                <span class="sliderBadge roundBadge"></span>
+
+            </label>
+            <p class="badgeImageSize512">512x512px</p>
+        </div>
+    </div>
+
+    <!-- Anlegen der Einstellungsmöglichkeiten -->
+    <div class="settingsBadge">
+        <!-- Anlegen der Kurstiteleinstellung -->
+        <div class="courseTitleSettingsBadge courseBadgeSettings">
+            <!-- Aufgabenbeschreibung -->
+            <p class="instructionsBadge">{{texttodisplay}}</p>
+            <!-- Eingabe des Kurstitels -->
+            <!-- Nicht vergessen -->
+            <input type="text" maxlength="15" class="inputBadge courseTitleInput">
+            <p class="noteBadge">Noch 15 Zeichen übrig...</p>
+        </div>
+        <!-- Anliegen der Programmeinstellung -->
+        <div  class="courseProgrammSettingsBadge courseBadgeSettings courseProgrammSettings">
+            <!-- Aufgabenbeschreibung -->
+            <p class="instructionsBadge">Wähle das Kursprgramm aus:</p>
+            <!-- Anlegen der Toogle-Switches -->
+            <div class="programmBadge">
+                <label class="switchBadge">
+                    <!-- Nicht vergessen -->
+                    <input type="checkbox" class="inputBadge techBadge">
+                    <span class="sliderBadge roundBadge"></span>
+                </label>
+                Tech
+            </div>
+            <div class="programmBadge">
+                <label class="switchBadge">
+                    <!-- Nicht vergessen -->
+                    <input type="checkbox" class="inputBadge digitalBadge">
+                    <span class="sliderBadge roundBadge"></span>
+                </label>
+                Digital-Basic
+            </div>
+            <div class="programmBadge">
+                <label class="switchBadge">
+                    <!-- Nicht vergessen onchange -->
+                    <input type="checkbox" class="inputBadge classicBadge">
+                    <span class="sliderBadge roundBadge"></span>
+                </label>
+                Classic
+            </div>
+        </div>
+
+        <!-- Anlegen der Badge-Nummer Einstellung -->
+        <div  class="courseBadgeSettings badgeNumberSettings">
+            <!-- Aufgabenbeschreibung -->
+            <p class="instructionsBadge">Gib die Badge-Nummern ein:</p>
+            <p>Erreichter Fortschritt:</p>
+            <input type="number"  maxlength="3" class="inputBadge badgeNumberInput">
+            <p>Erreichbarer Fortschritt:</p>
+            <input type="number"  maxlength="3" class="inputBadge badgeNumberInput-nd">
+        </div>
+
+
+        <!-- Anlegen der Badge-Color Einstellungen -->
+        <div class="courseBadgeSettings badgeColorSettings">
+            <!-- Aufgabenbeschreibung -->
+            <p class="instructionsBadge">Wähle eine Farbe aus:</p>
+            <!-- Anlegen der Farbpalette -->
+            <div class="btnRow">
+                <!-- Nicht vergessen onchange -->
+                <input type="button" class="colorBtn inputBadge redA" value="#f9829e">
+                <input type="button" class="colorBtn inputBadge redB" value="#d84173">
+                <input type="button" class="colorBtn inputBadge redC" value="rgb(205, 40, 075)">
+                <input type="button" class="colorBtn inputBadge redD" value="#931237">
+                <input type="button" class="colorBtn inputBadge redE" value="#600720">
+            </div>
+            <div class="btnRow">
+                <input type="button" class="colorBtn inputBadge blueA" value="#4e93d1">
+                <input type="button" class="colorBtn inputBadge blueB" value="#2368a5">
+                <input type="button" class="colorBtn inputBadge blueC" value="#0e4a7f">
+                <input type="button" class="colorBtn inputBadge blueD" value="#003063">
+                <input type="button" class="colorBtn inputBadge blueE" value="#011e4a">
+            </div>
+            <div class="btnRow">
+                <input type="button" class="colorBtn inputBadge greenA" value="#8ee69c">
+                <input type="button" class="colorBtn inputBadge greenB" value="#49ac5a">
+                <input type="button" class="colorBtn inputBadge greenC" value="#288838">
+                <input type="button" class="colorBtn inputBadge greenD" value="#155c21">
+                <input type="button" class="colorBtn inputBadge greenE" value="#062e0c">
+            </div>
+            <div class="btnRow">
+                <input type="button" class="colorBtn inputBadge orangeA" value="#e7ba7f">
+                <input type="button" class="colorBtn inputBadge orangeB" value="#ebab58">
+                <input type="button" class="colorBtn inputBadge orangeC" value="#c58229">
+                <input type="button" class="colorBtn inputBadge orangeD" value="#965c10">
+                <input type="button" class="colorBtn inputBadge orangeE" value="#7e4a07">
+            </div>
+            <div class="btnRow">
+                <input type="button" class="colorBtn inputBadge greyA" value="#ffffff">
+                <input type="button" class="colorBtn inputBadge greyB" value="#afafaf">
+                <input type="button" class="colorBtn inputBadge greyC" value="#818181">
+                <input type="button" class="colorBtn inputBadge greyD" value="#424242">
+                <input type="button" class="colorBtn inputBadge greyE" value="#000000">
+            </div>
+        </div>
+
+        <!-- Anlegen der Iconeinstellung -->
+        <div class="badgeIconSettings courseBadgeSettings">
+            <!-- Aufgabenbeschreibung -->
+            <p class="instructionsBadge">Lade ein Icon hoch:</p>
+            <!-- Anlegen des Icon-Uploads -->
+            <form class="customFileUpload" enctype="multipart/form-data">
+                <input type="file" name="image" class="inputBadge inputFileBadge">
+                <!-- Nicht Vergessen -->
+                <Button class="iconButtonBadge"> Icon Hochladen</Button>
+                <!--                <p><img id="previewBadge" height="20px" width="20px"></p>-->
+                <p class="errorMSG"></p>
+            </form>
+            <!-- Trennlinie -->
+            <p class="lineBadge"></p>
+            <!-- Aufgabenbeschreibung -->
+            <p class="instructionsBadge">Oder wähle eins aus:</p>
+            <!-- Anlegen der Icon-Auswahl -->
+            <div class="iconRow">
+                <div class="iconBtn iconBtn01"><img src="{{{imageiconone}}}" width="50px" height="50px"></div>
+                <div class="iconBtn iconBtn02"><img src="{{{imageicontwo}}}" width="50px" height="50px"></div>
+                <div class="iconBtn iconBtn03"><img src="{{{imageiconthree}}}" width="50px" height="50px">
+                </div>
+                <div class="iconBtn iconBtn04"><img src="{{{imageiconfour}}}" width="50px" height="50px">
+                </div>
+                <div class="iconBtn iconBtn05"><img id="previewBadge" width="30px" height="40px"
+                                                    style="visibility: hidden; margin-top: 10px"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anelegen der Badgegrafik-->
+    <div class="badgeGra"> <!-- Der rechte komplette Rahmen wo der Badge liegt -->
+        <div class="aboutBadge"> <!-- Ist der Div wo das Badge drauf ist -->
+            <div class="badgeContainer">
+                <!-- Ist der erste Kreis vom Badge -->
+                <canvas id="myCanvas" height="350px" width="350px"> Your browser
+                    does not support the HTML5 canvas tag.
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>

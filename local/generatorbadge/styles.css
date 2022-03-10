@@ -1,0 +1,408 @@
+.containerBadge {
+    height: 50rem;
+    max-width: 90rem;
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 0 30px 0 30px;
+    font-family: Verdana, Geneva, Tahoma, Sans-Serif;
+}
+
+.navigationBadge {
+    min-width: 194px;
+    max-width: 360px;
+    max-height: 600px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background: rgb(0, 30, 73);
+    border-radius: 20px 0 0 20px;
+    font-size: 1.25em;
+}
+
+.parameterBadge {
+    display: block;
+    padding: 15px 0 15px 20px;
+    border-bottom: 2px solid rgb(0, 48, 100);
+    text-align: left;
+    background: none;
+    color: inherit;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: 100%;
+}
+
+.aBadge:link {
+    color: rgb(164, 173, 182);
+    text-decoration: none;
+}
+
+.aBadge:hover {
+    color: white;
+}
+
+.downloadBtn {
+    margin: 60px auto;
+    display: block;
+    width: 175px;
+    height: 50px;
+    background: rgb(30, 174, 156);
+    border-radius: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+.downloadBtn:hover {
+    border: 2px solid white;
+}
+
+.settingsBadge {
+    min-width: 190px;
+    max-height: 600px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background: rgb(0, 48, 100);
+    color: white;
+    font-size: 1em;
+}
+
+.instructionsBadge {
+    font-size: 1em;
+    padding: 10px 10px 15px 20px;
+}
+
+.inputBadge {
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    width: 80%;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.noteBadge {
+    font-size: 1em;
+    color: rgb(164, 173, 182);
+    margin: 10px auto;
+}
+
+.courseBadgeSettings {
+    display: none;
+}
+
+.courseProgrammSettingsBadge {
+    background-color: black;
+}
+
+.switchBadge {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 60px;
+    height: 30px;
+}
+
+.switchBadge input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sliderBadge {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.sliderBadge:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.techBadge:checked + .sliderBadge {
+    background-color: #7770ae;
+}
+
+.digitalBadge:checked + .sliderBadge {
+    background-color: #149fa8;
+}
+
+.classicBadge:checked + .sliderBadge {
+    background-color: #1989ca;
+}
+
+.inputBadge:checked + .sliderBadge:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+}
+
+.sliderBadge.roundBadge {
+    border-radius: 34px;
+}
+
+.sliderBadge.roundBadge:before {
+    border-radius: 50%;
+}
+
+.programmBadge {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.btnRow {
+    margin: 10px auto;
+    padding: 0;
+    display: flex;
+}
+
+.colorBtn {
+    width: 2.3em;
+    height: 2.3em;
+    border: 1px solid rgb(164, 173, 182);
+    border-radius: 50%;
+    color: transparent;
+    margin: auto;
+    padding: 0;
+}
+
+.redA {
+    background-color: #f9829e;
+}
+
+.redB {
+    background-color: #d84173;
+}
+
+.redC {
+    background-color: #d40c4d;
+}
+
+.redD {
+    background-color: #931237;
+}
+
+.redE {
+    background-color: #600720;
+}
+
+.blueA {
+    background-color: #4e93d1;
+}
+
+.blueB {
+    background-color: #2368a5;
+}
+
+.blueC {
+    background-color: #0e4a7f;
+}
+
+.blueD {
+    background-color: #003064;
+}
+
+.blueE {
+    background-color: #011e4a;
+}
+
+.greenA {
+    background-color: #8ee69c;
+}
+
+.greenB {
+    background-color: #49ac5a;
+}
+
+.greenC {
+    background-color: #288838;
+}
+
+.greenD {
+    background-color: #155c21;
+}
+
+.greenE {
+    background-color: #062e0c;
+}
+
+.orangeA {
+    background-color: #e7ba7f;
+}
+
+.orangeB {
+    background-color: #ebab58;
+}
+
+.orangeC {
+    background-color: #c58229;
+}
+
+.orangeD {
+    background-color: #965c10;
+}
+
+.orangeE {
+    background-color: #7e4a07;
+}
+
+.greyA {
+    background-color: #fff;
+}
+
+.greyB {
+    background-color: #afafaf;
+}
+
+.greyC {
+    background-color: #818181;
+}
+
+.greyD {
+    background-color: #424242;
+}
+
+.greyE {
+    background-color: #000;
+}
+
+.colorBtn:hover {
+    border: 2px solid white;
+}
+
+.iconButtonBadge {
+    margin: 20px auto 20px 20px;
+    height: 30px;
+    background: rgb(30, 174, 156);
+    border-radius: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, Sans-Serif;
+    color: white;
+    font-size: 1em;
+}
+
+.inputFileBadge[type=file]::file-selector-button {
+    margin: 0 auto 20px 20px;
+    height: 30px;
+    background: rgb(30, 174, 156);
+    border-radius: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, Sans-Serif;
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.lineBadge {
+    border-bottom: 1px solid white;
+}
+
+.iconBtn {
+    width: 4em;
+    height: 4em;
+    border-radius: 100%;
+    color: transparent;
+    margin: 20px auto;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+    float: left;
+}
+
+.iconBtn:hover {
+    scroll-padding: 5px;
+    border: 2px solid white;
+}
+
+.iconRow {
+    margin-left: 20px;
+}
+
+.badgeGra {
+    min-width: 350px;
+    max-width: 530px;
+    max-height: 600px;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background: white;
+    border-radius: 0 20px 20px 0;
+    border-style: solid;
+    border-color: rgb(0, 48, 100);
+    border-width: 2px;
+}
+
+.badgeBackground {
+    width: 520px;
+    margin-left: 0;
+    margin-top: 5px;
+    background-color: #0a78d1;
+}
+
+.badgeContainer {
+    width: 60%;
+    height: 100%;
+    padding-right: 40px;
+}
+
+.aboutBadge {
+    width: 95%;
+    height: 52%;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.errorMSG {
+    color: #a00;
+}
+
+.badgeImageSize256 {
+    margin: 3px auto;
+    float: left;
+
+}
+
+.badgeImageSize512 {
+    margin: 3px auto;
+    float: right;
+
+}
+
+.badgeImageSwitch {
+    width: 95%;
+    height: 50px;
+    font-size: 10px;
+    color: rgb(164, 173, 182);
+    text-align: center;
+    margin: auto;
+}
+
+.badgeSize:checked + .sliderBadge {
+    background-color: rgb(30, 174, 156);
+}
