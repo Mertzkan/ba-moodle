@@ -42,17 +42,17 @@ class block_badgegenerator extends block_base
         return false;
     }
 
-//    public function applicable_formats()
-//    {
-//        return array(
-//            'all' => true,
-//            'site-index' => true,
-//            'course-view' => true,
-//            'course-view-social' => false,
-//            'mod' => false,
-//            'mod-quiz' => false
-//        );
-//    }
+    public function applicable_formats()
+    {
+        return array(
+            'all' => true,
+            'site-index' => false,
+            'course-view' => false,
+            'course-view-social' => false,
+            'mod' => false,
+            'mod-quiz' => false
+        );
+    }
 
     function has_config()
     {
