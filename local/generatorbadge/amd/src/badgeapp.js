@@ -209,6 +209,17 @@ define(['jquery'], function($) {
     }
 
     /**
+     * Fragt nach 2 Sekunden, ob die Seite neu geladen werden soll.
+     */
+    function pageReload() {
+        setTimeout(function() {
+            if (confirm('Neuen Badge erstellen?')) {
+                window.location.reload();
+            }
+        }, 2000);
+    }
+
+    /**
      * Konvertiert Canvas in Image und startet Download
      */
     $('.downloadBtn').click(function() {
@@ -229,9 +240,11 @@ define(['jquery'], function($) {
                 link.download = 'future-skills_badge_' + $('.courseTitleInput').val() + '.png';
                 link.click();
                 link.remove();
+                pageReload();
             };
         };
     });
+
     /**
      * Erzeugt ein neues Canvas und zeichnet es in veraenderter groesse nach
      * @param img Bild das veraendert werden soll
