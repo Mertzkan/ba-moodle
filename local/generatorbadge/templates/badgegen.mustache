@@ -20,14 +20,15 @@
 }}
 
 <div class="containerBadge">
-    <!--    <header class="headerBadge">-->
-    <!--        <p class="headlineBadge" id="headlinebad"> FutureSkills - Badge Konfigurator</p>-->
-    <!--    </header>-->
+<!--        <header class="headerBadge">
+            <p class="headlineBadge" id="headlinebad"> Badge-Generator</p>
+        </header>-->
 
+    <!-- Anlegen der Navigationspunkte -->
     <div class="navigationBadge">
         <button class="parameterBadge courseTitle" ><a class="aBadge" href="#" id="courseTitleLink">Kurstitel</a>
         </button>
-        <button class="parameterBadge courseProgramm" ><a class="aBadge" href="#" id="courseProgrammLink">KursProgramm</a>
+        <button class="parameterBadge courseProgramm" ><a class="aBadge" href="#" id="courseProgrammLink">Kurs Programme</a>
         </button>
         <button class="parameterBadge badgeColor" ><a class="aBadge" href="#" id="badgeColorLink">Badge Farbe</a>
         </button>
@@ -55,7 +56,7 @@
         <!-- Anlegen der Kurstiteleinstellung -->
         <div class="courseTitleSettingsBadge courseBadgeSettings">
             <!-- Aufgabenbeschreibung -->
-            <p class="instructionsBadge">{{texttodisplay}}</p>
+            <p class="instructionsBadge">Gib den Kurstitel ein:</p>
             <!-- Eingabe des Kurstitels -->
             <!-- Nicht vergessen -->
             <input type="text" maxlength="15" class="inputBadge courseTitleInput">
@@ -95,7 +96,7 @@
         <!-- Anlegen der Badge-Nummer Einstellung -->
         <div  class="courseBadgeSettings badgeNumberSettings">
             <!-- Aufgabenbeschreibung -->
-            <p class="instructionsBadge">Gib die Badge-Nummern ein:</p>
+            <p class="instructionsBadge">Gib den Kursfortschritt ein:</p>
             <p>Erreichter Fortschritt:</p>
             <input type="number"  maxlength="3" class="inputBadge badgeNumberInput">
             <p>Erreichbarer Fortschritt:</p>
@@ -176,15 +177,12 @@
         </div>
     </div>
 
-    <!-- Anelegen der Badgegrafik-->
+    <!-- Anlegen der Badge Vorschau-->
     <div class="badgeGra"> <!-- Der rechte komplette Rahmen wo der Badge liegt -->
         <div class="aboutBadge"> <!-- Ist der Div wo das Badge drauf ist -->
-            <div class="badgeContainer">
-                <!-- Ist der erste Kreis vom Badge -->
                 <canvas id="myCanvas" height="350px" width="350px"> Your browser
                     does not support the HTML5 canvas tag.
                 </canvas>
-            </div>
         </div>
     </div>
 </div>

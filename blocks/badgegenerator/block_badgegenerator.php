@@ -23,7 +23,8 @@
  */
 
 require_once(__DIR__ . '/../../config.php');
-require_once($CFG->dirroot . '/blocks/moodleblock.class.php');
+
+//require_once($CFG->dirroot . '/blocks/moodleblock.class.php');
 
 class block_badgegenerator extends block_base
 {
@@ -34,7 +35,7 @@ class block_badgegenerator extends block_base
 
     public function instance_allow_multiple()
     {
-        return true;
+        return false;
     }
 
     public function hide_header()
@@ -56,7 +57,7 @@ class block_badgegenerator extends block_base
 
     function has_config()
     {
-        return true;
+        return false;
     }
 
     function is_empty()
@@ -71,7 +72,6 @@ class block_badgegenerator extends block_base
 
 
         $templatecontext = [
-            'texttodisplay' => 'Gib den Kurstitel ein:',
             'imageiconone' => $OUTPUT->image_url('icon01', 'block_badgegenerator'),
             'imageicontwo' => $OUTPUT->image_url('icon02', 'block_badgegenerator'),
             'imageiconthree' => $OUTPUT->image_url('icon03', 'block_badgegenerator'),

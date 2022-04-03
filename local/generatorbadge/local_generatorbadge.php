@@ -2,7 +2,7 @@
 require_once('../../config.php');
 require_once 'lib.php';
 
-global $PAGE, $OUTPUT, $CFG;
+global $PAGE, $OUTPUT;
 
 $templatecontext = [
     'texttodisplay' => 'Gib den Kurstitel ein:',
@@ -23,7 +23,7 @@ $PAGE->set_heading($title);
 $PAGE->set_pagelayout('standard');
 $PAGE->set_pagetype('my-index');
 $PAGE->blocks->add_region('content');
-$PAGE->requires->js_call_amd('/local_generatorbadge/badgeapp','init');
+$PAGE->requires->js_call_amd('local_generatorbadge/badgeapp','init');
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading($pagetitle);

@@ -1,5 +1,5 @@
 <?php
-$string['pluginname'] = 'Badgegenerator v1.0';
+$string['pluginname'] = 'Badge-Generator';
 $string['genbadge'] = 'Simple Badgegenerator';
 $string['genbadge:addinstance'] = 'Add a new Badgegenerator';
 $string['genbadge:myaddinstance'] = 'Add a new Badgegenerator to the My Moodle page';

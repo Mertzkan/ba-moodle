@@ -1,8 +1,8 @@
 define(['jquery'], function($) {
     const wwwroot = 'http://localhost/moodle';
-    var canvasInnerColor = '#fff';
-    var canvas = document.getElementById('myCanvas');
-    var ctx = canvas.getContext('2d');
+    let canvasInnerColor = '#fff';
+    let canvas = document.getElementById('myCanvas');
+    let ctx = canvas.getContext('2d');
     ctx.font = '30px Tahoma';
     ctx.textAlign = 'center';
 
@@ -21,7 +21,7 @@ define(['jquery'], function($) {
         this.translate(x, y);
         this.rotate(startRotation);
 
-        for (var i = 0; i < text.length; i++) {
+        for (let i = 0; i < text.length; i++) {
             this.save();
             this.rotate(i * numRadsPerLetter);
             this.fillText(text[i], 0, -radius);
@@ -39,10 +39,10 @@ define(['jquery'], function($) {
      * @param startRotation Platzierung der Buchstaben
      */
     CanvasRenderingContext2D.prototype.fillCourseTitle = function(text, x, y, radius, startRotation) {
-        var courseTitleInput = text.toUpperCase().concat();
+        let courseTitleInput = text.toUpperCase().concat();
         courseTitleInput = courseTitleInput.split('').reverse().join('');
-        var numRotation = 0.0;
-        var numRads = 0.0;
+        let numRotation = 0.0;
+        let numRads = 0.0;
         if (courseTitleInput.length <= 5 && courseTitleInput.length > 2) {
             numRotation = 0.8;
             numRads = 0.3;
@@ -59,7 +59,7 @@ define(['jquery'], function($) {
         this.translate(x, y);
         this.rotate(startRotation + numRotation);
 
-        for (var i = 0; i < courseTitleInput.length; i++) {
+        for (let i = 0; i < courseTitleInput.length; i++) {
             this.save();
             this.rotate(i * numRadsPerLetter);
             this.fillText(courseTitleInput[i], 0, radius);
@@ -125,7 +125,7 @@ define(['jquery'], function($) {
     }
 
     /**
-     * tech Kreis
+     * Tech Kreis
      * fuellt den tech Kreis, bei slider Aenderung
      */
     $('.techBadge').change(function() {
@@ -149,7 +149,7 @@ define(['jquery'], function($) {
     ctx.closePath();
 
     /**
-     * digital-basic Kreis
+     * Digital-basic Kreis
      * fuellt den digital-basic Kreis, bei slider Aenderung
      */
     $('.digitalBadge').change(function() {
@@ -173,7 +173,7 @@ define(['jquery'], function($) {
     ctx.closePath();
 
     /**
-     * classic Kreis
+     * Classic Kreis
      * fuellt den classic Kreis, bei slider Aenderung
      */
     $('.classicBadge').click(function() {
@@ -196,6 +196,10 @@ define(['jquery'], function($) {
     ctx.stroke();
     ctx.closePath();
 
+    /**
+     * Sendet das Bild an den Server und speichert es dort.
+     * @param img Bild in Base64 Format
+     */
     function saveBadge(img) {
         $.ajax({
             type: 'POST',
@@ -229,10 +233,8 @@ define(['jquery'], function($) {
         img.onload = function() {
             if (!$('.badgeSize').prop('checked')) {
                 img2 = resizeImage(img, 220, 220);
-                //window.console.log(img2);
             } else {
                 img2 = resizeImage(img, 512, 512);
-                //window.console.log(typeof img2);
             }
             let link = document.createElement('a');
             img2.onload = function() {
@@ -266,12 +268,12 @@ define(['jquery'], function($) {
     }
 
     /**
-     * fuegt den gewuenschten Fortschritt des Courses in den Badge ein
+     * Fuegt den gewuenschten Fortschritt des Courses in den Badge ein
      * Bei dunklen Farben, Schriftfarbe Weiß
      */
     $('.badgeNumberSettings').on('input', '', function() {
-        var inputVal = $('.badgeNumberInput').val();
-        var sndInputVal = $('.badgeNumberInput-nd').val();
+        let inputVal = $('.badgeNumberInput').val();
+        let sndInputVal = $('.badgeNumberInput-nd').val();
         ctx.beginPath();
         ctx.moveTo(300, 175);
         ctx.fillStyle = canvasInnerColor;
@@ -298,20 +300,19 @@ define(['jquery'], function($) {
         if (sndInputVal.length > 0) {
             ctx.fillText(sndInputVal, 400 / 2, 350 / 1.25);
         }
-        window.console.log(inputVal.length);
         ctx.stroke();
         ctx.save();
         ctx.closePath();
     });
 
     /**
-     * fuellt den inneren Badge Kreis nach der gewuenschten Farbe
+     * Fuellt den inneren Badge Kreis nach der gewuenschten Farbe
      */
     $('.colorBtn').click(function() {
         canvasInnerColor = $(this).val();
         ctx.beginPath();
         ctx.moveTo(300, 175);
-        ctx.arc(175, 175, 125, 0, Math.PI * 2);  // innerer Kreis
+        ctx.arc(175, 175, 125, 0, Math.PI * 2); // Innerer Kreis
         ctx.strokeStyle = '#000';
         ctx.fillStyle = canvasInnerColor;
         ctx.fill();
@@ -321,13 +322,13 @@ define(['jquery'], function($) {
     });
 
     /**
-     * fuegt das Ausgewaehlte Icon in das Badge ein
+     * Fuegt das Ausgewaehlte Icon in das Badge ein
      */
     $('.iconBtn01').click(function() {
         ctx.fillStyle = canvasInnerColor;
         ctx.fill();
         ctx.fillRect(90, 100, 170, 150);
-        var img = $('.iconBtn img')[0];
+        let img = $('.iconBtn img')[0];
         ctx.drawImage(img, 90, 100, 170, 150);
         ctx.save();
     });
@@ -336,7 +337,7 @@ define(['jquery'], function($) {
         ctx.fillStyle = canvasInnerColor;
         ctx.fill();
         ctx.fillRect(90, 100, 170, 150);
-        var img = $('.iconBtn img')[1];
+        let img = $('.iconBtn img')[1];
         ctx.drawImage(img, 90, 100, 170, 150);
         ctx.save();
     });
@@ -345,7 +346,7 @@ define(['jquery'], function($) {
         ctx.fillStyle = canvasInnerColor;
         ctx.fill();
         ctx.fillRect(90, 100, 170, 150);
-        var img = $('.iconBtn img')[2];
+        let img = $('.iconBtn img')[2];
         ctx.drawImage(img, 90, 100, 170, 150);
         ctx.save();
     });
@@ -354,7 +355,7 @@ define(['jquery'], function($) {
         ctx.fillStyle = canvasInnerColor;
         ctx.fill();
         ctx.fillRect(90, 100, 170, 150);
-        var img = $('.iconBtn img')[3];
+        let img = $('.iconBtn img')[3];
         ctx.drawImage(img, 90, 100, 170, 150);
         ctx.save();
     });
@@ -363,17 +364,17 @@ define(['jquery'], function($) {
         ctx.fillStyle = canvasInnerColor;
         ctx.fill();
         ctx.fillRect(90, 100, 170, 150);
-        var img = $('.iconBtn img')[4];
+        let img = $('.iconBtn img')[4];
         ctx.drawImage(img, 90, 100, 170, 150);
         ctx.save();
     });
 
     /**
-     * fuegt den gewuenschten Course Titel in das Badge ein
+     * Fuegt den gewuenschten Course Titel in das Badge ein
      */
     $('.courseTitleSettingsBadge').on('input', '.courseTitleInput', function() {
-        var inputVal = $('.courseTitleInput').val();
-        var chars = 15 - inputVal.length;
+        let inputVal = $('.courseTitleInput').val();
+        let chars = 15 - inputVal.length;
         $('.noteBadge').text('Noch ' + chars + ' Zeichen übrig...');
         circle();
         ctx.fillStyle = '#000';
@@ -381,7 +382,7 @@ define(['jquery'], function($) {
     });
 
     /**
-     * fuegt das Hochgeladene Icon in das Badge ein und speichert es auf dem Server
+     * Fuegt das Hochgeladene Icon in das Badge ein und speichert es auf dem Server
      */
     $('.iconButtonBadge').click(function(e) {
         e.preventDefault();
@@ -413,7 +414,7 @@ define(['jquery'], function($) {
         }
     });
     /**
-     * fügt das Hochgeladene Icon in das Badge(Lokal)
+     * Fuegt das Hochgeladene Icon in das Badge(Lokal)
      */
     // function get_badge_images() {
     // $('.inputFileBadge').change(function() {
@@ -424,7 +425,7 @@ define(['jquery'], function($) {
     //     document.getElementById('previewBadge').style.visibility = 'visible';
     // };
     // reader.readAsDataURL(this.files[0]);
-//});
+// });
     return {
         init: function() {
             $(document).ready(function() {
