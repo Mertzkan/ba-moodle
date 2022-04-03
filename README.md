@@ -1,3 +1,7 @@
 # ba-moodle
+## Bachelor-Thesis
+## Entwicklung eines Moodle-PlugIns zum Konfigurieren von Badges
 
-badge generator plugin als Block und Page
+## Badge-Generator als Local- und Block-Plugin
+
+
